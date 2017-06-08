@@ -61,7 +61,7 @@ if (isset($_SESSION['username']))
     <div class="ui page grid">
       <div class="column">
         <div class="ui secondary pointing menu">
-          <a class="logo item" onclick="window.location.href='../index.php'">
+          <a class="logo item" onclick="window.location.href='admpage.php'">
             kusekolah
           </a>
           <div class="ui inline dropdown">
@@ -69,23 +69,24 @@ if (isset($_SESSION['username']))
             <div class="menu">
               <div class="item" data-text="this week" onclick="window.location.href='kepsek/kepsekadm.php'">Kepsek</div>
               <div class="item" data-text="this week" onclick="window.location.href='wakasek/wakasekadm.php'">Wakasek</div>
-              <div class="item" data-text="this week" onclick="window.location.href='data_guru/guruadm.php'">Data Guru</div>
+              <div class="item" data-text="this week" onclick="window.location.href='data_guru/data_guru_adm.php'">Data Guru</div>
               <div class="item" data-text="this week" onclick="window.location.href='siswa/siswaadm.php'">Data Siswa</div>
             </div>
           </div> 
           <div class="ui inline dropdown">
               <a class="item" style="color: white">Data Sekolah</a>
               <div class="menu">
-              <div class="item" data-text="this week" onclick="window.location.href='prestasi/prestasiadm.php'">Prestasi</div>
-              <div class="item" data-text="this week" onclick="window.location.href='jurusan/jurusanadm.php'">Jurusan</div>
+              <div class="item" data-text="this week" onclick="window.location.href='profil/profiladm.php'">Profil</div>
+              <div class="item" data-text="this week" onclick="window.location.href='prestasi/prestasi_adm.php'">Prestasi</div>
+              <div class="item" data-text="this week" onclick="window.location.href='jurusan/jurusan_adm.php'">Jurusan</div>
               <div class="item" data-text="this week" onclick="window.location.href='tenkependik/tenkependikadm.php'">Tenkependik</div>
             </div>
           </div>             
           <div class="ui inline dropdown">
               <a class="item" style="color: white">Aset</a>
               <div class="menu">
-              <div class="item" data-text="this week" onclick="window.location.href='aset_bangunan/aset_bangunanadm.php'">Aset Bangunan</div>
-              <div class="item" data-text="this week" onclick="window.location.href='aset_tanah/aset_tanahadm.php'">Aset Tanah</div>
+              <div class="item" data-text="this week" onclick="window.location.href='aset_bangunan/aset_bangunan_adm.php'">Aset Bangunan</div>
+              <div class="item" data-text="this week" onclick="window.location.href='aset_tanah/aset_tanah_adm.php'">Aset Tanah</div>
               <div class="item" data-text="this week" onclick="window.location.href='sarpras/sarprasadm.php'">Sarpras</div>
             </div>
           </div>

@@ -65,32 +65,42 @@ if (isset($_SESSION['username']))
           <a class="logo item" onclick="window.location.href='../../index.php'">
             kusekolah
           </a>
-          <div class="ui inline dropdown">
+         <div class="ui inline dropdown">
             <a class="item" style="color: white">Data Pokok</a>
             <div class="menu">
               <div class="item" data-text="this week" onclick="window.location.href='../kepsek/kepsekadm.php'">Kepsek</div>
-              <div class="item" data-text="this week" onclick="window.location.href='wakasekadm.php'">Wakasek</div>
-              <div class="item" data-text="this week" onclick="window.location.href='../data_guru/guruadm.php'">Data Guru</div>
+              <div class="item" data-text="this week" onclick="window.location.href='../wakasek/wakasekadm.php'">Wakasek</div>
+              <div class="item" data-text="this week" onclick="window.location.href='../data_guru/data_guru_adm.php'">Data Guru</div>
               <div class="item" data-text="this week" onclick="window.location.href='../siswa/siswaadm.php'">Data Siswa</div>
             </div>
           </div> 
           <div class="ui inline dropdown">
               <a class="item" style="color: white">Data Sekolah</a>
               <div class="menu">
-              <div class="item" data-text="this week" onclick="window.location.href='../prestasi/prestasiadm.php'">Prestasi</div>
-              <div class="item" data-text="this week" onclick="window.location.href='../jurusan/jurusanadm.php'">Jurusan</div>
-              <div class="item" data-text="this week" onclick="window.location.href='../tenkependik/tenkependikadm.php'">Tenkependik</div>
+              <div class="item" data-text="this week" onclick="window.location.href='../profil/profiladm.php'">Profil</div>
+              <div class="item" data-text="this week" onclick="window.location.href='../prestasi/prestasi_adm.php'">Prestasi</div>
+              <div class="item" data-text="this week" onclick="window.location.href='../jurusan/jurusan_adm.php'">Jurusan</div>
+              <div class="item" data-text="this week" onclick="window.location.href='../tenkependik/tenkependik_adm.php'">Tenkependik</div>
             </div>
           </div>             
           <div class="ui inline dropdown">
               <a class="item" style="color: white">Aset</a>
               <div class="menu">
-              <div class="item" data-text="this week" onclick="window.location.href='../aset_bangunan/aset_bangunanadm.php'">Aset Bangunan</div>
-              <div class="item" data-text="this week" onclick="window.location.href='../aset_tanah/aset_tanahadm.php'">Aset Tanah</div>
+              <div class="item" data-text="this week" onclick="window.location.href='../aset_bangunan/aset_bangunan_adm.php'">Aset Bangunan</div>
+              <div class="item" data-text="this week" onclick="window.location.href='../aset_tanah/aset_tanah_adm.php'">Aset Tanah</div>
               <div class="item" data-text="this week" onclick="window.location.href='../sarpras/sarprasadm.php'">Sarpras</div>
             </div>
           </div>
+          <a class="item" href="../admpage.php">
+            <i class="flaticon-star icon" style="color: white"></i>Data Admin
+          </a>
           <div class="right menu">
+            <div class="item">
+              <div class="ui icon input">
+                <input placeholder="Search..." type="text" class="search">
+                <i class="flaticon-move link icon"></i>
+              </div>
+            </div>
             <a class="ui item" href="../../logout.php" style="color: white">
               Logout
             </a>
