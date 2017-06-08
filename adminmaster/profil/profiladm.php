@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['username'])) 
   {
     include "../../koneksi.php";
-    $query = "SELECT * FROM wakasek";
+    $query = "SELECT * FROM profil";
     $sql = mysql_query($query, $koneksi);
     $jumlah_baris = mysql_num_rows($sql);
 ?>
@@ -129,7 +129,7 @@ if (isset($_SESSION['username']))
     <i class="flaticon-move link icon"></i>
   </div>
     <div class="ui mini horizontal menu">
-      <a class="item" style="color: black" href="add_wakasek.php">
+      <a class="item" style="color: black" href="addprofil.php">
         Tambah Data      
       </a>
       <a class="item" style="color: black;font-family: Roboto">
@@ -143,60 +143,60 @@ if (isset($_SESSION['username']))
   </div>
   <br>
   
-	<?php
-		$dbhost = 'localhost';
-		$dbuser = 'root';
-		$dbpass = '';
-		$batas = 10;
+  <?php
+    $dbhost = 'localhost';
+    $dbuser = 'root';
+    $dbpass = '';
+    $batas = 10;
 
 
-		 
-		$koneksi = mysql_connect($dbhost, $dbuser, $dbpass);
-		if(! $koneksi )
-		{
-		  die('Gagal Koneksi: ' . mysql_error());
-		}
-		mysql_select_db('dapodik');
-		/* Get total number of records */
-		$sql = "SELECT count(npsn) FROM profil ";
-		$ambildata = mysql_query( $sql, $koneksi );
-		if(! $ambildata )
-		{
-		  die('Gagal Ambil Data: ' . mysql_error());
-		}
-		$row = mysql_fetch_array($ambildata, MYSQL_NUM );
-		$hitung = $row[0];
-		 
-		if( isset($_GET{'page'} ) )
-		{
-		   $page = $_GET{'page'} + 1;
-		   $offset = $batas * $page ;
-		}
-		else
-		{
-		   $page = 0;
-		   $offset = 0;
-		}
-		$left_rec = $hitung - ($page * $batas);
-		 
-		$sql = "SELECT *".
-		       "FROM wakasek ".
-		       "LIMIT $offset, $batas";
-		 
-		$ambildata = mysql_query( $sql, $koneksi );
-		if(! $ambildata )
-		{
-		  die('Gagal Ambil Data: ' . mysql_error());
-		}
-		
-		    ?>
+     
+    $koneksi = mysql_connect($dbhost, $dbuser, $dbpass);
+    if(! $koneksi )
+    {
+      die('Gagal Koneksi: ' . mysql_error());
+    }
+    mysql_select_db('dapodik');
+    /* Get total number of records */
+    $sql = "SELECT count(npsn) FROM profil ";
+    $ambildata = mysql_query( $sql, $koneksi );
+    if(! $ambildata )
+    {
+      die('Gagal Ambil Data: ' . mysql_error());
+    }
+    $row = mysql_fetch_array($ambildata, MYSQL_NUM );
+    $hitung = $row[0];
+     
+    if( isset($_GET{'page'} ) )
+    {
+       $page = $_GET{'page'} + 1;
+       $offset = $batas * $page ;
+    }
+    else
+    {
+       $page = 0;
+       $offset = 0;
+    }
+    $left_rec = $hitung - ($page * $batas);
+     
+    $sql = "SELECT *".
+           "FROM profil ".
+           "LIMIT $offset, $batas";
+     
+    $ambildata = mysql_query( $sql, $koneksi );
+    if(! $ambildata )
+    {
+      die('Gagal Ambil Data: ' . mysql_error());
+    }
+    
+        ?>
         <!--ScrollMenu!-->
-		    <div class="ui container">
+        <div class="ui container">
         <div class="scrollmenu">
-  		    <table class="ui selectable celled table" id="tabel_wakasek" style="scroll-behavior: 2">
-  		      <thead>
-  		      <tr>
-  		        <th><center>NPSN</center></th>
+          <table class="ui selectable celled table" id="tabel_profil" style="scroll-behavior: 2">
+            <thead>
+            <tr>
+              <th><center>NPSN</center></th>
               <th><center>Tahun Ajaran</center></th>
               <th><center>NBM</center></th>
               <th><center>Wakil Kepala</center></th>
@@ -209,14 +209,14 @@ if (isset($_SESSION['username']))
               <th><center>Tanggal Habis</center></th>
               <th><center>Edit</center></th>
               <th><center>Hapus</center></th>
-  		      </tr>
-  		      </thead>
-  		      <tbody>
-  		      <?php
-  		      while($row = mysql_fetch_array($ambildata)): ?>
-  				
-  		      <tr>
-  		        <td><?php echo "{$row['npsn']}"?></td>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            while($row = mysql_fetch_array($ambildata)): ?>
+          
+            <tr>
+              <td><?php echo "{$row['npsn']}"?></td>
               <td><?php echo "{$row['tahun_ajaran']}"?></td>
               <td><?php echo "{$row['nbm']}"?></td>
               <td><?php echo "{$row['wakil_kepala']}"?></td>
@@ -228,62 +228,62 @@ if (isset($_SESSION['username']))
               <td><?php echo "{$row['masa_tugaske']}"?></td>
               <td><?php echo "{$row['tgl_habis']}"?></td>
               <td>  
-                <center><button class="ui icon button" onclick="window.location.href='edit_wakasek.php?npsn= <?php echo "{$row['npsn']}"?>'">
+                <center><button class="ui icon button" onclick="window.location.href='editprofil.php?npsn= <?php echo "{$row['npsn']}"?>'">
                   <i class="edit icon" ></i>
                 </button></center>
               </td> 
               <td>  
-                <center><button class="ui icon button" onclick="window.location.href='hapus_wakasek.php?npsn= <?php echo "{$row['npsn']}"?>'">
+                <center><button class="ui icon button" onclick="window.location.href='hapusprofil.php?npsn= <?php echo "{$row['npsn']}"?>'">
                   <i class="trash icon" ></i>
                 </button></center>
               </td> 
-  		      </tr>
-  		      <?php 
+            </tr>
+            <?php 
 
-          		endwhile;?>
-  		      </tbody>
-  		      </table>
+              endwhile;?>
+            </tbody>
+            </table>
           <!--ScrollMenu!-->
           </div>
           <!--ScrollMenu!-->
-		    </div>
-    	<center>
+        </div>
+      <center>
       <div class="ui container">
         <div class="ui mini horizontal menu">
         <a class="right menu item">
-          <button class=" ui simple small blue button" onclick="window.location.href='wakasek_adm.php?page=$page'"><b>Next Data</b>
+          <button class=" ui simple small blue button" onclick="window.location.href='profiladm.php?page=$page'"><b>Next Data</b>
           </button>
         </a>
         <?php 
-    		if( $page > 0 )
-    		{
-    		   $last = $page - 2;
+        if( $page > 0 )
+        {
+           $last = $page - 2;
            echo "<br>";
-    		   echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='wakasek_adm.php?page=$last'\"><b>Previous Data<b></button></a>";
+           echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='profiladm.php?page=$last'\"><b>Previous Data<b></button></a>";
 
-    		   echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='wakasek_adm.php?page=$page'\"><b>Next Data</b></button></a>";
-    		}
-    		else if( $page == 0 )
-    		{
-    		   echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='wakasek_adm.php?page=$page'\"><b>Next Data</b></button></a>";
-    		}
-    		else if( $left_rec < $batas )
-    		{
-    		   $last = $page - 2;
-    		   echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='wakasek_adm.php?page=$last'\"><b>Previous Data</b></button></a>";
-    		}
-    		?>
+           echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='profiladm.php?page=$page'\"><b>Next Data</b></button></a>";
+        }
+        else if( $page == 0 )
+        {
+           echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='profiladm.php?page=$page'\"><b>Next Data</b></button></a>";
+        }
+        else if( $left_rec < $batas )
+        {
+           $last = $page - 2;
+           echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='profiladm.php?page=$last'\"><b>Previous Data</b></button></a>";
+        }
+        ?>
       </div>
     </div>
     <br>
-		</center>
+    </center>
 
     <script>
     function fungsisearch() {
       var input, filter, table, tr, td, i;
       input = document.getElementById("inputsearch");
       filter = input.value.toUpperCase();
-      table = document.getElementById("tabel_wakasek");
+      table = document.getElementById("tabel_profil");
       tr = table.getElementsByTagName("tr");
       for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[0];

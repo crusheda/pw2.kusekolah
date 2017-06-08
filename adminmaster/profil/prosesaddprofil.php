@@ -18,10 +18,10 @@
     $sql = mysql_query($query, $konek);
     $jumlah_baris = mysql_num_rows($sql);
 
-	$npsn=$_POST['npsn'];
-	$jenjang=$_POST['jenjang'];
-	$nama_sekolah=$_POST['nama_sekolah'];
-	$sk_pendirian=$_POST['sk_pendirian'];
+  $npsn=$_POST['npsn'];
+  $jenjang=$_POST['jenjang'];
+  $nama_sekolah=$_POST['nama_sekolah'];
+  $sk_pendirian=$_POST['sk_pendirian'];
   $tgl_pendirian=$_POST['tgl_pendirian'];
   $alamat=$_POST['alamat'];
   $kel=$_POST['kel'];
@@ -41,8 +41,8 @@
   $koordinat_lat=$_POST['koordinat_lat'];
   $listrik=$_POST['listrik'];
   $akses_internet=$_POST['akses_internet'];
-	
-$query=mysql_query("insert into wakasek (
+  
+$query=mysql_query("insert into profil (
     npsn,
     jenjang,
     nama_sekolah,
@@ -66,7 +66,7 @@ $query=mysql_query("insert into wakasek (
     koordinat_lat,
     listrik,
     akses_internet) 
-		
+    
     values(
     '$npsn',
     '$jenjang',
@@ -92,8 +92,8 @@ $query=mysql_query("insert into wakasek (
     '$listrik',
     '$akses_internet')");
 
-	echo "<script>
-			alert('Berhasil menambahkan data profil');
-			window.location.assign('profil_adm.php');
-		</script>";
+  echo "<script>
+      alert('Berhasil menambahkan data profil');
+      window.location.assign('profiladm.php');
+    </script>";
 ?>

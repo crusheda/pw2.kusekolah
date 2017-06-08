@@ -255,7 +255,7 @@
 <body>
 <button class="circular floated fixed ui icon button" 
         style="margin-top: 20px;margin-left: 20px;width: 45px;height: 45px;opacity: 0.8;background-color: white;color: blue"
-        onclick="window.location.href='wakasek_adm.php'">
+        onclick="window.location.href='profiladm.php'">
   <i class="left arrow icon" style="font-size: 22px"></i>
 </button>
 <div class="container">
@@ -270,12 +270,12 @@
         Tambahkan Data Profil Sekolah
       </div>
     </h2>
-    <form class="ui large form" action="prosesadd_profil.php" method="post" >
+    <form class="ui large form" action="prosesaddprofil.php" method="post" >
       <div class="ui stacked segment" style="opacity: 0.8">
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="npsn" maxlength="8" placeholder="npsn (ex:20xxxxxxx)">
+            <input type="text" name="npsn" maxlength="8" placeholder="NPSN (ex:20xxxxxxx)">
           </div>
         </div>
         <div class="field">

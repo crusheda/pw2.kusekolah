@@ -264,7 +264,7 @@ $data = mysql_fetch_object($sql);
 <body>
 <button class="circular floated fixed ui icon button" 
         style="margin-top: 20px;margin-left: 20px;width: 45px;height: 45px;opacity: 0.8;background-color: white;color: blue"
-        onclick="window.location.href='profile_adm.php'">
+        onclick="window.location.href='profiladm.php'">
   <i class="left arrow icon" style="font-size: 22px"></i>
 </button>
 <div class="container">
@@ -279,7 +279,7 @@ $data = mysql_fetch_object($sql);
         Edit Data Profil Sekolah
       </div>
     </h2>
-    <form class="ui large form" action="prosesedit_wakasek.php" method="post" >
+    <form class="ui large form" action="proseseditprofil.php" method="post" >
       <div class="ui stacked segment" style="opacity: 0.8">
         <div class="field">
           <div class="ui left icon input">

@@ -18,7 +18,7 @@
     $query = "SELECT * FROM profil where npsn='$kunci'";
     $sql = mysql_query($query, $konek);
     
-	 $npsn=$_POST['npsn'];
+   $npsn=$_POST['npsn'];
   $jenjang=$_POST['jenjang'];
   $nama_sekolah=$_POST['nama_sekolah'];
   $sk_pendirian=$_POST['sk_pendirian'];
@@ -42,7 +42,7 @@
   $listrik=$_POST['listrik'];
   $akses_internet=$_POST['akses_internet'];
 
-  mysql_query("UPDATE  wakasek SET
+  mysql_query("UPDATE profil SET
     npsn='$npsn',
     jenjang='$jenjang',
     nama_sekolah='$nama_sekolah',
@@ -67,10 +67,10 @@
     listrik='$listrik',
     akses_internet='$akses_internet'
      where npsn='$kunci'");
-	echo "<script>
-			alert('Berhasil mengedit data Profil Sekolah');
-      window.location.assign('profil_adm.php');
-		</script>";
+  echo "<script>
+      alert('Berhasil mengedit data Profil Sekolah');
+      window.location.assign('profiladm.php');
+    </script>";
 ?>
 <!--
       window.location.assign('kepsekadm.php');
