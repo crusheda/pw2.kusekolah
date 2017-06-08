@@ -1,7 +1,7 @@
 <?php
 include "../../koneksi.php";
 $kunci=$_GET['npsn'];
-$query="SELECT * from kepsek where npsn=".$kunci;
+$query="SELECT * from aset_tanah where npsn=".$kunci;
 $sql = mysql_query($query, $koneksi);
 $data = mysql_fetch_object($sql);
 
@@ -10,7 +10,7 @@ $data = mysql_fetch_object($sql);
   <!DOCTYPE html>
 <html>
 <head>
-  <title>Edit Kepsek</title>
+  <title>Edit Aset Tanah</title>
   <link rel="stylesheet" type="text/css" href="../../dist/semantic.min.css">
   <link href='../../img/twh.ico' rel='shortcut icon'>
   <link rel="icon" href="../../img/twh.ico" type="image/x-icon">
@@ -78,86 +78,96 @@ $data = mysql_fetch_object($sql);
                 }
               ]
             },
-            alamat: {
-              identifier  : 'tahun_ajaran',
+            no_persil: {
+              identifier  : 'no_persil',
               rules: [
                 {
                   type   : 'empty'
                 }
               ]
             },
-            agama: {
-              identifier  : 'kepala_sekolah',
+            kepemilikan: {
+              identifier  : 'kepemilikan',
               rules: [
                 {
                   type   : 'empty'
                 }
               ]
             },
-            umur: {
-              identifier  : 'nbm',
+            atasnama_sertifikat: {
+              identifier  : 'atasnama_sertifikat',
               rules: [
                 {
                   type   : 'empty'
-                },
-                {
-                  type    : 'number'
                 }
               ]
             },
-            status: {
-              identifier  : 'tgl_lahir',
+            status_tanah: {
+              identifier  : 'status_tanah',
               rules: [                
                 {
                   type   : 'empty'
                 }
               ]
             },
-            username: {
-              identifier  : 'sk_pengangkatan',
-              rules: [
-                {
-                  type   : 'empty'
-                },
-                {
-                  type   : 'number'
-                }
-              ]
-            },
-            password: {
-              identifier  : 'tgl_sk',
+            luas_tanah: {
+              identifier  : 'luas_tanah',
               rules: [
                 {
                   type   : 'empty'
                 }
               ]
             },
-            email: {
-              identifier  : 'asal_sk',
+            no_sertifikat: {
+              identifier  : 'no_sertifikat',
               rules: [
                 {
                   type   : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'tmt_jabatan',
+              tgl_sertifikat: {
+              identifier  : 'tgl_sertifikat',
+              rules: [
+                {
+                  type   : 'empty'
+                }
+              ]
+            },
+            thn_perolehan: {
+              identifier  : 'thn_perolehan',
               rules :[
                 {
                   type    : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'masa_tugaske',
+            harga_perolehan: {
+              identifier  : 'harga_perolehan',
               rules :[
                 {
                   type    : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'tgl_berahir',
+            letak: {
+              identifier  : 'letak',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            peruntukan: {
+              identifier  : 'peruntukan',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            asal_usul: {
+              identifier  : 'asal_usul',
               rules :[
                 {
                   type    : 'empty'
@@ -174,7 +184,7 @@ $data = mysql_fetch_object($sql);
 <body>
 <button class="circular floated fixed ui icon button" 
         style="margin-top: 20px;margin-left: 20px;width: 45px;height: 45px;opacity: 0.8;background-color: white;color: blue"
-        onclick="window.location.href='kepsekadm.php'">
+        onclick="window.location.href='aset_tanah_adm.php'">
   <i class="left arrow icon" style="font-size: 22px"></i>
 </button>
 <div class="container">
@@ -186,76 +196,88 @@ $data = mysql_fetch_object($sql);
     <br><br>
       <img src="../../img/dapodik.png" class="image">
       <div class="content" style="color: white;opacity: 0.8">
-        Edit Data Kepala Sekolah
+        Edit Data Aset Tanah
       </div>
     </h2>
-    <form class="ui large form" action="proseseditkepsek.php" method="post" >
+    <form class="ui large form" action="prosesedit_aset_tanah.php" method="post" >
       <div class="ui stacked segment" style="opacity: 0.8">
         <div class="field">
           <div class="ui left icon input">
-            <i class="user icon"></i>
+            <i class="chevron right icon"></i>
             <input type="text" name="npsn" maxlength="8" placeholder="NPSN (ex:20xxxxxxx)" value="<?php echo $data->npsn;?>">
 
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="home icon"></i>
-            <input type="text" name="tahun_ajaran" placeholder="Tahun Ajaran (ex:YYYY/YYYY)" value="<?php echo $data->tahun_ajaran;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="no_persil" placeholder="No Persil" value="<?php echo $data->no_persil;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="home icon"></i>
-            <input type="text" name="kepala_sekolah" placeholder="Nama Kepala Sekolah" value="<?php echo $data->kepala_sekolah;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="kepemilikan" placeholder="Kepemilikan" value="<?php echo $data->kepemilikan;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="hashtag icon"></i>
-            <input type="text" name="nbm" placeholder="NBM" value="<?php echo $data->nbm;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="atasnama_sertifikat" placeholder="Atas Nama Sertifikat" value="<?php echo $data->atasnama_sertifikat;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="home icon"></i>
-            <input type="text" name="tgl_lahir" placeholder="Tanggal Lahir (ex:YYYY-MM-DD)" value="<?php echo $data->tgl_lahir;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="status_tanah" placeholder="Status Tanah" value="<?php echo $data->status_tanah;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="users icon"></i>
-            <input type="text" name="sk_pengangkatan" placeholder="SK-Pengangkatan (ex:2xx)" value="<?php echo $data->sk_pengangkatan;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="luas_tanah" placeholder="Luas Tanah" value="<?php echo $data->luas_tanah;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="lock icon"></i>
-            <input type="text" name="tgl_sk" placeholder="Tanggal SK (ex:YYYY-MM-DD)" value="<?php echo $data->tgl_sk;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="no_sertifikat" placeholder="No Sertifikat" value="<?php echo $data->no_sertifikat;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="student icon"></i>
-            <input type="text" name="asal_sk" placeholder="Asal SK" value="<?php echo $data->asal_sk;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="tgl_sertifikat" placeholder="Tanggal Sertifikat" value="<?php echo $data->tgl_sertifikat;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="student icon"></i>
-            <input type="text" name="tmt_jabatan" placeholder="Tmt Jabatan (ex:YYYY-MM-DD)" value="<?php echo $data->tmt_jabatan;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="thn_perolehan" placeholder="Tahun Perolehan" value="<?php echo $data->thn_perolehan;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="student icon"></i>
-            <input type="text" name="masa_tugaske" placeholder="Masa Tugas Ke- (ex:II)" value="<?php echo $data->masa_tugaske;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="harga_perolehan" placeholder="Harga Perolehan" value="<?php echo $data->harga_perolehan;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="student icon"></i>
-            <input type="text" name="tgl_berahir" placeholder="Tanggal Berakhir (ex:YYYY-MM-DD)" value="<?php echo $data->tgl_berahir;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="asal_usul" placeholder="Asal Usul" value="<?php echo $data->asal_usul;?>">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="letak" placeholder="Letak" value="<?php echo $data->letak;?>">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="peruntukan" placeholder="Peruntukan" value="<?php echo $data->peruntukan;?>">
           </div>
         </div>
         <div class="ui fluid large blue submit button" style="background-color: #697192">

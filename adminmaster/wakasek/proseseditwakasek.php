@@ -42,10 +42,11 @@
     tmt_jabatan='$tmt_jabatan',
     masa_tugaske='$masa_tugaske',
     tgl_habis='$tgl_habis'
+    
      where npsn='$kunci'");
 	echo "<script>
 			alert('Berhasil mengedit data Wakil Kepala Sekolah');
-      window.location.assign('wakasek_adm.php');
+      window.location.assign('wakasekadm.php');
 		</script>";
 ?>
 <!--

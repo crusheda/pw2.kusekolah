@@ -159,7 +159,7 @@
 <body>
 <button class="circular floated fixed ui icon button" 
         style="margin-top: 20px;margin-left: 20px;width: 45px;height: 45px;opacity: 0.8;background-color: white;color: blue"
-        onclick="window.location.href='wakasek_adm.php'">
+        onclick="window.location.href='wakasekadm.php'">
   <i class="left arrow icon" style="font-size: 22px"></i>
 </button>
 <div class="container">
@@ -174,7 +174,7 @@
         Tambahkan Data Wakil Kepala Sekolah
       </div>
     </h2>
-    <form class="ui large form" action="prosesadd_wakasek.php" method="post" >
+    <form class="ui large form" action="prosesaddwakasek.php" method="post" >
       <div class="ui stacked segment" style="opacity: 0.8">
         <div class="field">
           <div class="ui left icon input">

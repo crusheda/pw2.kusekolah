@@ -1,10 +1,10 @@
 <?php
 include "../../koneksi.php";
 $kunci=$_GET['npsn'];
-$query=mysql_query("delete from wakasek where npsn=".$kunci);
+$query=mysql_query("delete from data_guru where npsn=".$kunci);
 echo "<script>
 		alert('Berhasil delete data');
-		window.location.assign('wakasekadm.php');
+		window.location.assign('data_guru_adm.php');
 
 	</script>";
 ?>

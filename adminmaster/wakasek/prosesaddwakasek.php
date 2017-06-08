@@ -58,6 +58,6 @@ $query=mysql_query("insert into wakasek (
 
 	echo "<script>
 			alert('Berhasil menambahkan data wakasek');
-			window.location.assign('wakasek_adm.php');
+			window.location.assign('wakasekadm.php');
 		</script>";
 ?>

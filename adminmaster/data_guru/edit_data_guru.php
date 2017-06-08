@@ -1,7 +1,7 @@
 <?php
 include "../../koneksi.php";
 $kunci=$_GET['npsn'];
-$query="SELECT * from kepsek where npsn=".$kunci;
+$query="SELECT * from data_guru where npsn=".$kunci;
 $sql = mysql_query($query, $koneksi);
 $data = mysql_fetch_object($sql);
 
@@ -10,7 +10,7 @@ $data = mysql_fetch_object($sql);
   <!DOCTYPE html>
 <html>
 <head>
-  <title>Edit Kepsek</title>
+  <title>Edit Data Guru</title>
   <link rel="stylesheet" type="text/css" href="../../dist/semantic.min.css">
   <link href='../../img/twh.ico' rel='shortcut icon'>
   <link rel="icon" href="../../img/twh.ico" type="image/x-icon">
@@ -66,8 +66,8 @@ $data = mysql_fetch_object($sql);
       $('.ui.dropdown').dropdown();
       $('.ui.form')
         .form({
-          fields: {
-            nama: {
+                    fields: {
+            npsn: {
               identifier  : 'npsn',
               rules: [
                 {
@@ -78,7 +78,7 @@ $data = mysql_fetch_object($sql);
                 }
               ]
             },
-            alamat: {
+            nama_bangunan: {
               identifier  : 'tahun_ajaran',
               rules: [
                 {
@@ -86,84 +86,214 @@ $data = mysql_fetch_object($sql);
                 }
               ]
             },
-            agama: {
-              identifier  : 'kepala_sekolah',
-              rules: [
-                {
-                  type   : 'empty'
-                }
-              ]
-            },
-            umur: {
+            kode_bangunan: {
               identifier  : 'nbm',
               rules: [
                 {
                   type   : 'empty'
-                },
-                {
-                  type    : 'number'
                 }
               ]
             },
-            status: {
-              identifier  : 'tgl_lahir',
+            register_bangunan: {
+              identifier  : 'nama_guru',
+              rules: [
+                {
+                  type   : 'empty'
+                }
+              ]
+            },
+            kode_bangunan: {
+              identifier  : 'bidang',
               rules: [                
                 {
                   type   : 'empty'
                 }
               ]
             },
-            username: {
-              identifier  : 'sk_pengangkatan',
-              rules: [
-                {
-                  type   : 'empty'
-                },
-                {
-                  type   : 'number'
-                }
-              ]
-            },
-            password: {
-              identifier  : 'tgl_sk',
+            kostruksi_bangunan: {
+              identifier  : 'nuptk',
               rules: [
                 {
                   type   : 'empty'
                 }
               ]
             },
-            email: {
-              identifier  : 'asal_sk',
+            luas_lantai: {
+              identifier  : 'nip',
               rules: [
                 {
                   type   : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'tmt_jabatan',
+            lokasi: {
+              identifier  : 'tempat_lahir',
+              rules: [
+                {
+                  type   : 'empty'
+                }
+              ]
+            },
+            tahun_pembangunan: {
+              identifier  : 'tgl_lahir',
               rules :[
                 {
                   type    : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'masa_tugaske',
+            luas_bangunan: {
+              identifier  : 'telepon',
               rules :[
                 {
                   type    : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'tgl_berahir',
+            biaya_pembangunan: {
+              identifier  : 'email',
               rules :[
                 {
                   type    : 'empty'
                 }
               ]
-            }       
+            } 
+            tahun_pembangunan: {
+              identifier  : 'pangkat_goldar',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            luas_bangunan: {
+              identifier  : 'tgl_pengangkatan',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            tahun_pembangunan: {
+              identifier  : 'sertifikasi_guru',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            luas_bangunan: {
+              identifier  : 'tmt_sertifikat',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            tahun_pembangunan: {
+              identifier  : 'jk',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            luas_bangunan: {
+              identifier  : 'sts_pegawai',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            tahun_pembangunan: {
+              identifier  : 'organisasi',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            luas_bangunan: {
+              identifier  : 'alamat',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            tahun_pembangunan: {
+              identifier  : 'rt_rw',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            luas_bangunan: {
+              identifier  : 'kelurahan',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            tahun_pembangunan: {
+              identifier  : 'kec',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            luas_bangunan: {
+              identifier  : 'kab',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            tahun_pembangunan: {
+              identifier  : 'prov',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            luas_bangunan: {
+              identifier  : 'pendidikan',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            tahun_pembangunan: {
+              identifier  : 'jurusan',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            luas_bangunan: {
+              identifier  : 'univ',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            tahun_pembangunan: {
+              identifier  : 'thn_lulus',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            }
           }
         })
       ;
@@ -174,7 +304,7 @@ $data = mysql_fetch_object($sql);
 <body>
 <button class="circular floated fixed ui icon button" 
         style="margin-top: 20px;margin-left: 20px;width: 45px;height: 45px;opacity: 0.8;background-color: white;color: blue"
-        onclick="window.location.href='kepsekadm.php'">
+        onclick="window.location.href='data_guru_adm.php'">
   <i class="left arrow icon" style="font-size: 22px"></i>
 </button>
 <div class="container">
@@ -186,10 +316,10 @@ $data = mysql_fetch_object($sql);
     <br><br>
       <img src="../../img/dapodik.png" class="image">
       <div class="content" style="color: white;opacity: 0.8">
-        Edit Data Kepala Sekolah
+        Edit Data Aset Sekolah
       </div>
     </h2>
-    <form class="ui large form" action="proseseditkepsek.php" method="post" >
+    <form class="ui large form" action="prosesedit_data_guru.php" method="post" >
       <div class="ui stacked segment" style="opacity: 0.8">
         <div class="field">
           <div class="ui left icon input">
@@ -200,62 +330,62 @@ $data = mysql_fetch_object($sql);
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="home icon"></i>
-            <input type="text" name="tahun_ajaran" placeholder="Tahun Ajaran (ex:YYYY/YYYY)" value="<?php echo $data->tahun_ajaran;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="nama_bangunan" placeholder="Nama Bangunan" value="<?php echo $data->nama_bangunan;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="home icon"></i>
-            <input type="text" name="kepala_sekolah" placeholder="Nama Kepala Sekolah" value="<?php echo $data->kepala_sekolah;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="kode_bangunan" placeholder="kode Bangunan" value="<?php echo $data->kode_bangunan;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="hashtag icon"></i>
-            <input type="text" name="nbm" placeholder="NBM" value="<?php echo $data->nbm;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="register_bangunan" placeholder="Register Bangunan" value="<?php echo $data->register_bangunan;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="home icon"></i>
-            <input type="text" name="tgl_lahir" placeholder="Tanggal Lahir (ex:YYYY-MM-DD)" value="<?php echo $data->tgl_lahir;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="kondisi_bangunan" placeholder="Kondisi Bangunan" value="<?php echo $data->kondisi_bangunan;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="users icon"></i>
-            <input type="text" name="sk_pengangkatan" placeholder="SK-Pengangkatan (ex:2xx)" value="<?php echo $data->sk_pengangkatan;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="kostruksi_bangunan" placeholder="Konstruksi Bangunan" value="<?php echo $data->kostruksi_bangunan;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="lock icon"></i>
-            <input type="text" name="tgl_sk" placeholder="Tanggal SK (ex:YYYY-MM-DD)" value="<?php echo $data->tgl_sk;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="luas_lantai" placeholder="Luas Lantai" value="<?php echo $data->luas_lantai;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="student icon"></i>
-            <input type="text" name="asal_sk" placeholder="Asal SK" value="<?php echo $data->asal_sk;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="lokasi" placeholder="Lokasi" value="<?php echo $data->lokasi;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="student icon"></i>
-            <input type="text" name="tmt_jabatan" placeholder="Tmt Jabatan (ex:YYYY-MM-DD)" value="<?php echo $data->tmt_jabatan;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="tahun_pembangunan" placeholder="Tahun Pembangunan" value="<?php echo $data->tahun_pembangunan;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="student icon"></i>
-            <input type="text" name="masa_tugaske" placeholder="Masa Tugas Ke- (ex:II)" value="<?php echo $data->masa_tugaske;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="luas_bangunan" placeholder="Luas Bangunan" value="<?php echo $data->luas_bangunan;?>">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
-            <i class="student icon"></i>
-            <input type="text" name="tgl_berahir" placeholder="Tanggal Berakhir (ex:YYYY-MM-DD)" value="<?php echo $data->tgl_berahir;?>">
+            <i class="chevron right icon"></i>
+            <input type="text" name="biaya_pembangunan" placeholder="Biaya Pembangunan" value="<?php echo $data->biaya_pembangunan;?>">
           </div>
         </div>
         <div class="ui fluid large blue submit button" style="background-color: #697192">

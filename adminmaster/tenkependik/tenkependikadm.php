@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['username'])) 
   {
     include "../../koneksi.php";
-    $query = "SELECT * FROM kepsek";
+    $query = "SELECT * FROM tenkependik";
     $sql = mysql_query($query, $koneksi);
     $jumlah_baris = mysql_num_rows($sql);
 ?>
@@ -81,13 +81,13 @@ if (isset($_SESSION['username']))
               <div class="item" data-text="this week" onclick="window.location.href='.php'">Kabupaten</div>
               <div class="item" data-text="this week" onclick="window.location.href='.php'">Prestasi</div>
               <div class="item" data-text="this week" onclick="window.location.href='.php'">Jurusan</div>
-              <div class="item" data-text="this week" onclick="window.location.href='.php'">Tenkependik</div>
+              <div class="item" data-text="this week" onclick="window.location.href='.php'">tenkependik</div>
             </div>
           </div>             
           <div class="ui inline dropdown">
               <a class="item" style="color: white">Aset</a>
               <div class="menu">
-              <div class="item" data-text="this week" onclick="window.location.href='.php'">Aset Bangunan</div>
+              <div class="item" data-text="this week" onclick="window.location.href='.php'">tenkependik</div>
               <div class="item" data-text="this week" onclick="window.location.href='.php'">Aset Tanah</div>
               <div class="item" data-text="this week" onclick="window.location.href='.php'">Sarpras</div>
             </div>
@@ -113,7 +113,7 @@ if (isset($_SESSION['username']))
                   Hello!
                   <h2><u><?php echo "".$_SESSION['username'];?></u></h2>
             </h1>
-              <p class="ui centered lead">Mengelola Data Kepsek</p>
+              <p class="ui centered lead">Mengelola Data tenkependik</p>
             <br>
           </div>
         </div>  
@@ -123,14 +123,14 @@ if (isset($_SESSION['username']))
 
   <!-- Isi Body -->
   <br>
-  <div class="ui horizontal divider"><a>Kepala Sekolah</a></div>
+  <div class="ui horizontal divider"><a>tenkependik</a></div>
   <div class="ui container">
   <div class="ui icon input">
     <input type="text" id="inputsearch" onkeyup="fungsisearch()" placeholder="Cari npsn.." title="Tulis npsn disini">
     <i class="flaticon-move link icon"></i>
   </div>
     <div class="ui mini horizontal menu">
-      <a class="item" style="color: black" href="addkepsek.php">
+      <a class="item" style="color: black" href="add_tenkependik.php">
         Tambah Data      
       </a>
       <a class="item" style="color: black;font-family: Roboto">
@@ -181,7 +181,7 @@ if (isset($_SESSION['username']))
 		$left_rec = $hitung - ($page * $batas);
 		 
 		$sql = "SELECT *".
-		       "FROM kepsek ".
+		       "FROM tenkependik ".
 		       "LIMIT $offset, $batas";
 		 
 		$ambildata = mysql_query( $sql, $koneksi );
@@ -194,22 +194,31 @@ if (isset($_SESSION['username']))
         <!--ScrollMenu!-->
 		    <div class="ui container">
         <div class="scrollmenu">
-  		    <table class="ui selectable celled table" id="tabelkepsek" style="scroll-behavior: 2">
+  		    <table class="ui selectable celled table" id="tabel_tenkependik" style="scroll-behavior: 2">
   		      <thead>
   		      <tr>
   		        <th><center>NPSN</center></th>
               <th><center>Tahun Ajaran</center></th>
-  		        <th><center>Kepala Sekolah</center></th>
-  		        <th><center>NBM</center></th>
-  		        <th><center>TTL</center></th>
-  		        <th><center>SK Pengangkatan</center></th>
-              <th><center>Tanggal SK</center></th>
-              <th><center>Asal SK</center></th>
-              <th><center>Tamat Jabatan</center></th>
-              <th><center>Masa Tugas Ke</center></th>
-              <th><center>Tanggal Berakhir</center></th>
-              <th><center>Edit</center></th>
-              <th><center>Hapus</center></th>
+              <th><center>NBM</center></th>
+              <th><center>Jabatan</center></th>
+              <th><center>Nama</center></th>
+              <th><center>NIP</center></th>
+              <th><center>Tempat Lahir</center></th>
+              <th><center>Tanggal Lahir</center></th>
+              <th><center>Telepon</center></th>
+              <th><center>Email</center></th>
+              <th><center>Pangkat</center></th>
+              <th><center>Tanggal Pengangkatan</center></th>
+              <th><center>Jenis Kelamin</center></th>
+              <th><center>Status Pegawai</center></th>
+              <th><center>Organisasi</center></th>
+              <th><center>Alamat</center></th>
+              <th><center>RT RW</center></th>
+              <th><center>Kelurahan</center></th>
+              <th><center>Kecamatan</center></th>
+              <th><center>Kabupaten</center></th>
+              <th><center>Provinsi</center></th>
+              <th><center>Pendidikan Terakhir</center></th>
   		      </tr>
   		      </thead>
   		      <tbody>
@@ -219,22 +228,33 @@ if (isset($_SESSION['username']))
   		      <tr>
   		        <td><?php echo "{$row['npsn']}"?></td>
               <td><?php echo "{$row['tahun_ajaran']}"?></td>
-  		        <td><?php echo "{$row['kepala_sekolah']}"?></td>
-  		        <td><?php echo "{$row['nbm']}"?></td>
-              <td><?php echo "{$row['tgl_lahir']}"?></td>
-  		        <td><?php echo "{$row['sk_pengangkatan']}"?></td>
-              <td><?php echo "{$row['tgl_sk']}"?></td>
-              <td><?php echo "{$row['asal_sk']}"?></td>
-  		        <td><?php echo "{$row['tmt_jabatan']}"?></td>
-              <td><?php echo "{$row['masa_tugaske']}"?></td>
-              <td><?php echo "{$row['tgl_berahir']}"?></td>
+              <td><?php echo "{$row['nbm']}"?></td>
+              <td><?php echo "{$row['jabatan']}"?></td>
+              <td><?php echo "{$row['nama']}"?></td>
+              <td><?php echo "{$row['nip']}"?></td>
+              <td><?php echo "{$row['tempat_lhr']}"?></td>
+              <td><?php echo "{$row['tgl_lhr']}"?></td>
+              <td><?php echo "{$row['telepon']}"?></td>
+              <td><?php echo "{$row['email']}"?></td>
+              <td><?php echo "{$row['pangkat']}"?></td>
+              <td><?php echo "{$row['tgl_pengangkatan']}"?></td>
+              <td><?php echo "{$row['jk']}"?></td>
+              <td><?php echo "{$row['status_pegawai']}"?></td>
+              <td><?php echo "{$row['organisasi']}"?></td>
+              <td><?php echo "{$row['alamat']}"?></td>
+              <td><?php echo "{$row['rt_rw']}"?></td>
+              <td><?php echo "{$row['kel']}"?></td>
+              <td><?php echo "{$row['kec']}"?></td>
+              <td><?php echo "{$row['kab']}"?></td>
+              <td><?php echo "{$row['prov']}"?></td>
+              <td><?php echo "{$row['pnd_thr']}"?></td>
               <td>  
-                <center><button class="ui icon button" onclick="window.location.href='editkepsek.php?npsn= <?php echo "{$row['npsn']}"?>'">
+                <center><button class="ui icon button" onclick="window.location.href='edit_tenkependik.php?npsn= <?php echo "{$row['npsn']}"?>'">
                   <i class="edit icon" ></i>
                 </button></center>
               </td> 
               <td>  
-                <center><button class="ui icon button" onclick="window.location.href='hapuskepsek.php?npsn= <?php echo "{$row['npsn']}"?>'">
+                <center><button class="ui icon button" onclick="window.location.href='hapus_tenkependik.php?npsn= <?php echo "{$row['npsn']}"?>'">
                   <i class="trash icon" ></i>
                 </button></center>
               </td> 
@@ -252,7 +272,7 @@ if (isset($_SESSION['username']))
       <div class="ui container">
         <div class="ui mini horizontal menu">
         <a class="right menu item">
-          <button class=" ui simple small blue button" onclick="window.location.href='kepsekadm.php?page=$page'"><b>Next Data</b>
+          <button class=" ui simple small blue button" onclick="window.location.href='tenkependik_adm.php?page=$page'"><b>Next Data</b>
           </button>
         </a>
         <?php 
@@ -260,18 +280,18 @@ if (isset($_SESSION['username']))
     		{
     		   $last = $page - 2;
            echo "<br>";
-    		   echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='kepsekadm.php?page=$last'\"><b>Previous Data<b></button></a>";
+    		   echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='tenkependik_adm.php?page=$last'\"><b>Previous Data<b></button></a>";
 
-    		   echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='kepsekadm.php?page=$page'\"><b>Next Data</b></button></a>";
+    		   echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='tenkependik_adm.php?page=$page'\"><b>Next Data</b></button></a>";
     		}
     		else if( $page == 0 )
     		{
-    		   echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='kepsekadm.php?page=$page'\"><b>Next Data</b></button></a>";
+    		   echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='tenkependik_adm.php?page=$page'\"><b>Next Data</b></button></a>";
     		}
     		else if( $left_rec < $batas )
     		{
     		   $last = $page - 2;
-    		   echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='kepsekadm.php?page=$last'\"><b>Previous Data</b></button></a>";
+    		   echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='tenkependik_adm.php?page=$last'\"><b>Previous Data</b></button></a>";
     		}
     		?>
       </div>
@@ -284,7 +304,7 @@ if (isset($_SESSION['username']))
       var input, filter, table, tr, td, i;
       input = document.getElementById("inputsearch");
       filter = input.value.toUpperCase();
-      table = document.getElementById("tabelkepsek");
+      table = document.getElementById("tabel_tenkependik");
       tr = table.getElementsByTagName("tr");
       for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[0];

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tambah Kepsek</title>
+  <title>Tambah Aset bangunan</title>
   <link rel="stylesheet" type="text/css" href="../../dist/semantic.min.css">
   <link href='../../img/twh.ico' rel='shortcut icon'>
   <link rel="icon" href="../../img/twh.ico" type="image/x-icon">
@@ -58,7 +58,7 @@
       $('.ui.form')
         .form({
           fields: {
-            nama: {
+            npsn: {
               identifier  : 'npsn',
               rules: [
                 {
@@ -69,86 +69,80 @@
                 }
               ]
             },
-            alamat: {
-              identifier  : 'tahun_ajaran',
+            nama_bangunan: {
+              identifier  : 'nama_bangunan',
               rules: [
                 {
                   type   : 'empty'
                 }
               ]
             },
-            agama: {
-              identifier  : 'kepala_sekolah',
+            kode_bangunan: {
+              identifier  : 'kode_bangunan',
               rules: [
                 {
                   type   : 'empty'
                 }
               ]
             },
-            umur: {
-              identifier  : 'nbm',
+            register_bangunan: {
+              identifier  : 'register_bangunan',
               rules: [
                 {
                   type   : 'empty'
-                },
-                {
-                  type    : 'number'
                 }
               ]
             },
-            status: {
-              identifier  : 'tgl_lahir',
+            kode_bangunan: {
+              identifier  : 'kondisi_bangunan',
               rules: [                
                 {
                   type   : 'empty'
                 }
               ]
             },
-            username: {
-              identifier  : 'sk_pengangkatan',
-              rules: [
-                {
-                  type   : 'empty'
-                },
-                {
-                  type   : 'number'
-                }
-              ]
-            },
-            password: {
-              identifier  : 'tgl_sk',
+            kostruksi_bangunan: {
+              identifier  : 'kostruksi_bangunan',
               rules: [
                 {
                   type   : 'empty'
                 }
               ]
             },
-            email: {
-              identifier  : 'asal_sk',
+            luas_lantai: {
+              identifier  : 'luas_lantai',
               rules: [
                 {
                   type   : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'tmt_jabatan',
+            lokasi: {
+              identifier  : 'lokasi',
+              rules: [
+                {
+                  type   : 'empty'
+                }
+              ]
+            },
+            tahun_pembangunan: {
+              identifier  : 'tahun_pembangunan',
               rules :[
                 {
                   type    : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'masa_tugaske',
+            luas_bangunan: {
+              identifier  : 'luas_bangunan',
               rules :[
                 {
                   type    : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'tgl_berahir',
+            biaya_pembangunan: {
+              identifier  : 'biaya_pembangunan',
               rules :[
                 {
                   type    : 'empty'
@@ -165,7 +159,7 @@
 <body>
 <button class="circular floated fixed ui icon button" 
         style="margin-top: 20px;margin-left: 20px;width: 45px;height: 45px;opacity: 0.8;background-color: white;color: blue"
-        onclick="window.location.href='kepsekadm.php'">
+        onclick="window.location.href='aset_bangunan_adm.php'">
   <i class="left arrow icon" style="font-size: 22px"></i>
 </button>
 <div class="container">
@@ -180,7 +174,7 @@
         Tambahkan Data
       </div>
     </h2>
-    <form class="ui large form" action="prosesaddkepsek.php" method="post" >
+    <form class="ui large form" action="prosesadd_aset_bangunan.php" method="post" >
       <div class="ui stacked segment" style="opacity: 0.8">
         <div class="field">
           <div class="ui left icon input">
@@ -191,61 +185,61 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="tahun_ajaran" placeholder="Tahun Ajaran (ex:YYYY/YYYY)">
+            <input type="text" name="nama_bangunan" placeholder="Nama Bangunan">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="kepala_sekolah" placeholder="Nama Kepala Sekolah">
+            <input type="text" name="kode_bangunan" placeholder="kode Bangunan">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="nbm" placeholder="NBM">
+            <input type="text" name="register_bangunan" placeholder="Register Bangunan">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="tgl_lahir" placeholder="Tanggal Lahir (ex:YYYY-MM-DD)">
+            <input type="text" name="kondisi_bangunan" placeholder="Kondisi Bangunan">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="sk_pengangkatan" placeholder="SK-Pengangkatan (ex:2xx)">
+            <input type="text" name="kostruksi_bangunan" placeholder="Konstruksi Bangunan">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="tgl_sk" placeholder="Tanggal SK (ex:YYYY-MM-DD)">
+            <input type="text" name="luas_lantai" placeholder="Luas Lantai">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="asal_sk" placeholder="Asal SK">
+            <input type="text" name="lokasi" placeholder="Lokasi">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="tmt_jabatan" placeholder="Tmt Jabatan (ex:YYYY-MM-DD)">
+            <input type="text" name="tahun_pembangunan" placeholder="Tahun Pembangunan">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="masa_tugaske" placeholder="Masa Tugas Ke- (ex:II)">
+            <input type="text" name="luas_bangunan" placeholder="Luas Bangunan">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="tgl_berahir" placeholder="Tanggal Berakhir (ex:YYYY-MM-DD)">
+            <input type="text" name="biaya_pembangunan" placeholder="Biaya Pembangunan">
           </div>
         </div>
         <div class="ui fluid large blue submit button" style="background-color: #697192">

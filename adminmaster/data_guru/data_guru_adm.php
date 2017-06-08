@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['username'])) 
   {
     include "../../koneksi.php";
-    $query = "SELECT * FROM kepsek";
+    $query = "SELECT * FROM data_guru";
     $sql = mysql_query($query, $koneksi);
     $jumlah_baris = mysql_num_rows($sql);
 ?>
@@ -113,7 +113,7 @@ if (isset($_SESSION['username']))
                   Hello!
                   <h2><u><?php echo "".$_SESSION['username'];?></u></h2>
             </h1>
-              <p class="ui centered lead">Mengelola Data Kepsek</p>
+              <p class="ui centered lead">Mengelola Data Aset Bangunan</p>
             <br>
           </div>
         </div>  
@@ -123,14 +123,14 @@ if (isset($_SESSION['username']))
 
   <!-- Isi Body -->
   <br>
-  <div class="ui horizontal divider"><a>Kepala Sekolah</a></div>
+  <div class="ui horizontal divider"><a>Aset Bangunan</a></div>
   <div class="ui container">
   <div class="ui icon input">
     <input type="text" id="inputsearch" onkeyup="fungsisearch()" placeholder="Cari npsn.." title="Tulis npsn disini">
     <i class="flaticon-move link icon"></i>
   </div>
     <div class="ui mini horizontal menu">
-      <a class="item" style="color: black" href="addkepsek.php">
+      <a class="item" style="color: black" href="add_data_guru.php">
         Tambah Data      
       </a>
       <a class="item" style="color: black;font-family: Roboto">
@@ -181,7 +181,7 @@ if (isset($_SESSION['username']))
 		$left_rec = $hitung - ($page * $batas);
 		 
 		$sql = "SELECT *".
-		       "FROM kepsek ".
+		       "FROM data_guru ".
 		       "LIMIT $offset, $batas";
 		 
 		$ambildata = mysql_query( $sql, $koneksi );
@@ -194,20 +194,37 @@ if (isset($_SESSION['username']))
         <!--ScrollMenu!-->
 		    <div class="ui container">
         <div class="scrollmenu">
-  		    <table class="ui selectable celled table" id="tabelkepsek" style="scroll-behavior: 2">
+  		    <table class="ui selectable celled table" id="tabel_data_guru" style="scroll-behavior: 2">
   		      <thead>
   		      <tr>
   		        <th><center>NPSN</center></th>
               <th><center>Tahun Ajaran</center></th>
-  		        <th><center>Kepala Sekolah</center></th>
-  		        <th><center>NBM</center></th>
-  		        <th><center>TTL</center></th>
-  		        <th><center>SK Pengangkatan</center></th>
-              <th><center>Tanggal SK</center></th>
-              <th><center>Asal SK</center></th>
-              <th><center>Tamat Jabatan</center></th>
-              <th><center>Masa Tugas Ke</center></th>
-              <th><center>Tanggal Berakhir</center></th>
+              <th><center>NBM</center></th>
+              <th><center>Nama Guru</center></th>
+              <th><center>Bidang</center></th>
+              <th><center>NUPTK</center></th>
+              <th><center>NIP</center></th>
+              <th><center>Tempat Lahir</center></th>
+              <th><center>Tanggal Lahir</center></th>
+              <th><center>Telepon</center></th>
+              <th><center>Email</center></th>
+              <th><center>Pangkat Golruang</center></th>
+              <th><center>Tanggal Pengangkatan</center></th>
+              <th><center>Sertifikasi</center></th>
+              <th><center>TMT Sertifikasi</center></th>
+              <th><center>Jenis Kelamin</center></th>
+              <th><center>Setatus Pegawai</center></th>
+              <th><center>Organisasi</center></th>
+              <th><center>Alamat></th>
+              <th><center>Rt dan Rw</center></th>
+              <th><center>Kelurahan</center></th>
+              <th><center>Kecamatan</center></th>
+              <th><center>Kabupaten</center></th>
+              <th><center>Provinsi></th>
+              <th><center>Pendidikan</center></th>
+              <th><center>Jurusan</center></th>
+              <th><center>Universitas</center></th>
+              <th><center>Tahun Lulus</center></th>
               <th><center>Edit</center></th>
               <th><center>Hapus</center></th>
   		      </tr>
@@ -219,22 +236,39 @@ if (isset($_SESSION['username']))
   		      <tr>
   		        <td><?php echo "{$row['npsn']}"?></td>
               <td><?php echo "{$row['tahun_ajaran']}"?></td>
-  		        <td><?php echo "{$row['kepala_sekolah']}"?></td>
-  		        <td><?php echo "{$row['nbm']}"?></td>
+              <td><?php echo "{$row['nbm']}"?></td>
+              <td><?php echo "{$row['nama_guru']}"?></td>
+              <td><?php echo "{$row['bidang']}"?></td>
+              <td><?php echo "{$row['nuptk']}"?></td>
+              <td><?php echo "{$row['nip']}"?></td>
+              <td><?php echo "{$row['tempat_lahir']}"?></td>
               <td><?php echo "{$row['tgl_lahir']}"?></td>
-  		        <td><?php echo "{$row['sk_pengangkatan']}"?></td>
-              <td><?php echo "{$row['tgl_sk']}"?></td>
-              <td><?php echo "{$row['asal_sk']}"?></td>
-  		        <td><?php echo "{$row['tmt_jabatan']}"?></td>
-              <td><?php echo "{$row['masa_tugaske']}"?></td>
-              <td><?php echo "{$row['tgl_berahir']}"?></td>
+              <td><?php echo "{$row['telepon']}"?></td>
+              <td><?php echo "{$row['email']}"?></td>
+              <td><?php echo "{$row['pangkat_golruang']}"?></td>
+              <td><?php echo "{$row['tgl_pengangkatan']}"?></td>
+              <td><?php echo "{$row['sertifikasi_guru']}"?></td>
+              <td><?php echo "{$row['tmt_sertifikasi']}"?></td>
+              <td><?php echo "{$row['jk']}"?></td>
+              <td><?php echo "{$row['sts_pegawai']}"?></td>
+              <td><?php echo "{$row['organisasi']}"?></td>
+              <td><?php echo "{$row['alamat']}"?></td>
+              <td><?php echo "{$row['rt_rw']}"?></td>
+              <td><?php echo "{$row['kelurahan']}"?></td>
+              <td><?php echo "{$row['kec']}"?></td>
+              <td><?php echo "{$row['kab']}"?></td>
+              <td><?php echo "{$row['prov']}"?></td>
+              <td><?php echo "{$row['pendidikan']}"?></td>
+              <td><?php echo "{$row['jurusan']}"?></td>
+              <td><?php echo "{$row['univ']}"?></td>
+              <td><?php echo "{$row['thn_lulus']}"?></td>
               <td>  
-                <center><button class="ui icon button" onclick="window.location.href='editkepsek.php?npsn= <?php echo "{$row['npsn']}"?>'">
+                <center><button class="ui icon button" onclick="window.location.href='edit_data_guru.php?npsn= <?php echo "{$row['npsn']}"?>'">
                   <i class="edit icon" ></i>
                 </button></center>
               </td> 
               <td>  
-                <center><button class="ui icon button" onclick="window.location.href='hapuskepsek.php?npsn= <?php echo "{$row['npsn']}"?>'">
+                <center><button class="ui icon button" onclick="window.location.href='hapus_data_guru.php?npsn= <?php echo "{$row['npsn']}"?>'">
                   <i class="trash icon" ></i>
                 </button></center>
               </td> 
@@ -252,7 +286,7 @@ if (isset($_SESSION['username']))
       <div class="ui container">
         <div class="ui mini horizontal menu">
         <a class="right menu item">
-          <button class=" ui simple small blue button" onclick="window.location.href='kepsekadm.php?page=$page'"><b>Next Data</b>
+          <button class=" ui simple small blue button" onclick="window.location.href='data_guru_adm.php?page=$page'"><b>Next Data</b>
           </button>
         </a>
         <?php 
@@ -260,18 +294,18 @@ if (isset($_SESSION['username']))
     		{
     		   $last = $page - 2;
            echo "<br>";
-    		   echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='kepsekadm.php?page=$last'\"><b>Previous Data<b></button></a>";
+    		   echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='data_guru_adm.php?page=$last'\"><b>Previous Data<b></button></a>";
 
-    		   echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='kepsekadm.php?page=$page'\"><b>Next Data</b></button></a>";
+    		   echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='data_guru_adm.php?page=$page'\"><b>Next Data</b></button></a>";
     		}
     		else if( $page == 0 )
     		{
-    		   echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='kepsekadm.php?page=$page'\"><b>Next Data</b></button></a>";
+    		   echo "<a class=\"right menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='data_guru_adm.php?page=$page'\"><b>Next Data</b></button></a>";
     		}
     		else if( $left_rec < $batas )
     		{
     		   $last = $page - 2;
-    		   echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='kepsekadm.php?page=$last'\"><b>Previous Data</b></button></a>";
+    		   echo "<a class=\"left menu item\"><button class=\" ui simple small blue button \" onclick=\"window.location.href='data_guru_adm.php?page=$last'\"><b>Previous Data</b></button></a>";
     		}
     		?>
       </div>
@@ -284,7 +318,7 @@ if (isset($_SESSION['username']))
       var input, filter, table, tr, td, i;
       input = document.getElementById("inputsearch");
       filter = input.value.toUpperCase();
-      table = document.getElementById("tabelkepsek");
+      table = document.getElementById("tabel_data_guru");
       tr = table.getElementsByTagName("tr");
       for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[0];

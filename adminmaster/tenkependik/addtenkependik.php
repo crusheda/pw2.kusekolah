@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tambah Kepsek</title>
+  <title>Tambah Tenkependik</title>
   <link rel="stylesheet" type="text/css" href="../../dist/semantic.min.css">
   <link href='../../img/twh.ico' rel='shortcut icon'>
   <link rel="icon" href="../../img/twh.ico" type="image/x-icon">
@@ -69,7 +69,7 @@
                 }
               ]
             },
-            alamat: {
+            tahun_ajaran: {
               identifier  : 'tahun_ajaran',
               rules: [
                 {
@@ -77,84 +77,166 @@
                 }
               ]
             },
-            agama: {
-              identifier  : 'kepala_sekolah',
-              rules: [
-                {
-                  type   : 'empty'
-                }
-              ]
-            },
-            umur: {
+            nbm: {
               identifier  : 'nbm',
               rules: [
                 {
                   type   : 'empty'
-                },
-                {
-                  type    : 'number'
                 }
               ]
             },
-            status: {
-              identifier  : 'tgl_lahir',
+            jabatan: {
+              identifier  : 'jabatan',
+              rules: [
+                {
+                  type   : 'empty'
+                }
+              ]
+            },
+            nama: {
+              identifier  : 'nama',
               rules: [                
                 {
                   type   : 'empty'
                 }
               ]
             },
-            username: {
-              identifier  : 'sk_pengangkatan',
+            nip: {
+              identifier  : 'nip',
               rules: [
                 {
                   type   : 'empty'
-                },
-                {
-                  type   : 'number'
                 }
               ]
             },
-            password: {
-              identifier  : 'tgl_sk',
+            tempat_lhr: {
+              identifier  : 'tempat_lhr',
               rules: [
                 {
                   type   : 'empty'
+                }
+              ]
+            },
+            tgl_lhr: {
+              identifier  : 'tgl_lhr',
+              rules: [
+                {
+                  type   : 'empty'
+                }
+              ]
+            },
+            telepon: {
+              identifier  : 'telepon',
+              rules :[
+                {
+                  type    : 'empty'
                 }
               ]
             },
             email: {
-              identifier  : 'asal_sk',
-              rules: [
-                {
-                  type   : 'empty'
-                }
-              ]
-            },
-            hakakses: {
-              identifier  : 'tmt_jabatan',
+              identifier  : 'email',
               rules :[
                 {
                   type    : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'masa_tugaske',
+            pangkat: {
+              identifier  : 'pangkat',
               rules :[
                 {
                   type    : 'empty'
                 }
               ]
             },
-            hakakses: {
-              identifier  : 'tgl_berahir',
+            tgl_pengangkatan: {
+              identifier  : 'tgl_pengangkatan',
               rules :[
                 {
                   type    : 'empty'
                 }
               ]
-            }       
+            },
+            jk: {
+              identifier  : 'jk',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },       
+            status_pegawai: {
+              identifier  : 'status_pegawai',
+              rules :[
+                {
+                  type    : 'status_pegawai'
+                }
+              ]
+            },
+            organisasi: {
+              identifier  : 'organisasi',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            alamat: {
+              identifier  : 'alamat',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            rt_rw: {
+              identifier  : 'rt_rw',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            kel: {
+              identifier  : 'kel',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            kec: {
+              identifier  : 'kec',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            kab: {
+              identifier  : 'kab',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            prov: {
+              identifier  : 'prov',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            },
+            pnd_thr: {
+              identifier  : 'pnd_thr',
+              rules :[
+                {
+                  type    : 'empty'
+                }
+              ]
+            }
           }
         })
       ;
@@ -165,7 +247,7 @@
 <body>
 <button class="circular floated fixed ui icon button" 
         style="margin-top: 20px;margin-left: 20px;width: 45px;height: 45px;opacity: 0.8;background-color: white;color: blue"
-        onclick="window.location.href='kepsekadm.php'">
+        onclick="window.location.href='tenkependik_adm.php'">
   <i class="left arrow icon" style="font-size: 22px"></i>
 </button>
 <div class="container">
@@ -180,7 +262,7 @@
         Tambahkan Data
       </div>
     </h2>
-    <form class="ui large form" action="prosesaddkepsek.php" method="post" >
+    <form class="ui large form" action="prosesadd_tenkependik.php" method="post" >
       <div class="ui stacked segment" style="opacity: 0.8">
         <div class="field">
           <div class="ui left icon input">
@@ -191,13 +273,7 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="tahun_ajaran" placeholder="Tahun Ajaran (ex:YYYY/YYYY)">
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="chevron right icon"></i>
-            <input type="text" name="kepala_sekolah" placeholder="Nama Kepala Sekolah">
+            <input type="text" name="tahun_ajaran" placeholder="Tahun Ajaran">
           </div>
         </div>
         <div class="field">
@@ -209,43 +285,114 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="tgl_lahir" placeholder="Tanggal Lahir (ex:YYYY-MM-DD)">
+            <input type="text" name="jabatan" placeholder="Jabatan">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="sk_pengangkatan" placeholder="SK-Pengangkatan (ex:2xx)">
+            <input type="text" name="nama" placeholder="Nama">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="tgl_sk" placeholder="Tanggal SK (ex:YYYY-MM-DD)">
+            <input type="text" name="nip" placeholder="NIP">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="asal_sk" placeholder="Asal SK">
+            <input type="text" name="tempat_lhr" placeholder="Tempat Lahir" >
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="tmt_jabatan" placeholder="Tmt Jabatan (ex:YYYY-MM-DD)">
+            <input type="text" name="tgl_lhr" placeholder="Tanggal Lahir">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="masa_tugaske" placeholder="Masa Tugas Ke- (ex:II)">
+            <input type="text" name="telepon" placeholder="Telepon">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="chevron right icon"></i>
-            <input type="text" name="tgl_berahir" placeholder="Tanggal Berakhir (ex:YYYY-MM-DD)">
+            <input type="text" name="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="pangkat" placeholder="Pangkat">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="tgl_pengangkatan" placeholder="Tanggal Pengangkatan">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="jk" placeholder="Jenis Kelamin">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="status_pegawai" placeholder="Status Pegawai">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="organisasi" placeholder="Organisasi">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="alamat" placeholder="Alamat">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="rt_rw" placeholder="rt_rw">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="kel" placeholder="Kelurahan">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="kec" placeholder="Kecamatan">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="kab" placeholder="Kabupaten">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="prov" placeholder="Provinsi">
+          </div>
+          <div class="field">
+          <div class="ui left icon input">
+            <i class="chevron right icon"></i>
+            <input type="text" name="pnd_thr" placeholder="Pendidikan terakhir">
           </div>
         </div>
         <div class="ui fluid large blue submit button" style="background-color: #697192">
